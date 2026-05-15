@@ -7,83 +7,73 @@ showToc: true
 
 # Zero-Knowledge Proof (ZKP) Acceleration Using Local GPU Clusters
 
-This guide outlines the software infrastructure deployment process for accelerating zero-knowledge proof (ZKP) computations using local GPU clusters. ZKPs are cryptographic protocols that allow one party to demonstrate the possession of certain information without revealing the information itself. As ZKPs gain popularity in various applications, such as privacy-preserving blockchain transactions and decentralized finance (DeFi), optimizing their computational performance is crucial.
+**Introduction**
+-----------------
 
-## Prerequisites
+Zero-Knowledge Proofs (ZKPs) have revolutionized the way we approach cryptography, enabling secure verifications without revealing sensitive information. However, their computational complexity can make them challenging to implement in real-world applications. This guide focuses on accelerating ZKP computations using local GPU clusters, providing a straightforward and efficient solution for deployment.
 
-Before deploying the local GPU cluster for ZKP acceleration, ensure you have:
+**GPU Computing Fundamentals**
+---------------------------
 
-1. A compatible system with multiple NVIDIA or AMD GPUs
-2. CUDA or ROCm drivers installed for respective GPU architectures
-3. A Linux-based operating system (e.g., Ubuntu, CentOS)
-4. Docker and nvidia-docker or rocm-docker installed
+Before diving into ZKP acceleration, it's essential to understand the basics of GPU computing:
 
-## Step 1: Set Up the Local GPU Cluster
+* **GPUs (Graphics Processing Units)**: High-performance processors designed for parallel computation, especially in graphics rendering.
+* **CUDA/OpenCL**: Programming frameworks allowing developers to harness GPU power and write efficient code.
 
-To create a local GPU cluster, follow these steps:
+**ZKP Overview**
+----------------
 
-### Install and Configure GPU Manager
+A Zero-Knowledge Proof is an interactive protocol between a prover and a verifier, where the prover demonstrates possession of some information without revealing it. This process relies on complex cryptographic computations:
 
-1. Install the GPU manager (e.g., CUDA for NVIDIA or ROCm for AMD) according to your GPU architecture.
-2. Ensure the GPU driver is up-to-date.
+* **Proof generation**: Creating a proof based on a statement (e.g., "I know the discrete logarithm of a given number").
+* **Verification**: Checking the validity of the proof without learning the underlying information.
 
-### Create a Docker Compose File
+**GPU Acceleration Benefits**
+----------------------------
 
-Create a `docker-compose.yml` file with the following content:
-```yaml
-version: '3'
-services:
-  zkpx:
-    build: .
-    environment:
-      - NVIDIA_VISIBLE_DEVICES=all # or ROCM_DEVICE_ID=0 for AMD GPUs
-    volumes:
-      - ./zkpx:/app
-    ports:
-      - "50051:50051"
-```
-Replace `./zkpx` with the actual path to your ZKP acceleration project.
+By leveraging local GPU clusters, ZKP accelerations offer several advantages:
 
-### Build and Run the ZKP Acceleration Container
+* **Speedup**: GPUs can perform thousands of floating-point operations per second, significantly outperforming CPUs in parallel computations.
+* **Energy Efficiency**: GPU computing is often more energy-efficient than traditional CPU-based approaches, reducing the overall carbon footprint.
 
-1. Navigate to the root directory of your ZKP acceleration project.
-2. Run `docker-compose build` to build the container image.
-3. Run `docker-compose up -d` to start the container in detached mode.
+**GPU-Based ZKP Implementation**
+--------------------------------
 
-## Step 2: Integrate with a ZKP Library or Framework
+To accelerate ZKPs using local GPU clusters, follow these steps:
 
-To integrate your local GPU cluster with a ZKP library or framework, follow these steps:
+### Hardware Requirements
 
-### Choose a ZKP Library or Framework
+* **GPUs**: A cluster of at least 2-4 NVIDIA/AMD GPUs with sufficient VRAM (e.g., 8 GB or more).
+* **Host Machine**: A suitable host machine with a recent CUDA/OpenCL-enabled CPU.
+* **Network**: A high-bandwidth network for data transfer between nodes.
 
-Select a suitable ZKP library or framework for your use case. Some popular options include:
+### Software Configuration
 
-* libsnark
-* bulletproofs
-* zk-SNARKs (e.g., ZoKrates, Circom)
-* STARKs (e.g., StarkWare)
+1. **GPU Drivers**: Ensure the latest GPU drivers are installed on all nodes in the cluster.
+2. **CUDA/OpenCL**: Install and configure the respective frameworks (CUDA for NVIDIA, OpenCL for AMD) to manage GPU resources.
+3. **ZKP Library**: Select a suitable ZKP library optimized for GPU acceleration, such as:
+	+ Microsoft's zk-SNARKs on GPU
+	+ Google's libsnark with GPU support
+	+ Other libraries offering GPU-enabled implementations
 
-### Compile the ZKP Library or Framework
+### Deployment and Monitoring
+-----------------------------
 
-Compile the chosen ZKP library or framework with GPU acceleration support. This may require modifying the build configuration files to include GPU-specific flags.
+1. **Node Configuration**: Configure each node in the cluster to use the selected ZKP library and GPU framework.
+2. **Job Scheduling**: Implement a job scheduling system (e.g., slurm, torque) to manage workload distribution across nodes.
+3. **Monitoring Tools**: Utilize tools like nvidia-smi or AMD's ROCm Monitoring to track GPU usage, temperature, and performance.
 
-## Step 3: Benchmark and Optimize Performance
+**Conclusion**
+--------------
 
-After setting up the local GPU cluster and integrating it with a ZKP library or framework, benchmark and optimize performance:
+Accelerating Zero-Knowledge Proofs using local GPU clusters offers a powerful solution for real-world applications. By following the guidelines outlined in this guide, you can harness the computational power of GPUs to speed up ZKP computations while reducing energy consumption. As the demand for secure, privacy-preserving solutions continues to grow, leveraging local GPU clusters will play a crucial role in making ZKPs more practical and efficient.
 
-### Run Benchmarking Tests
+**Additional Resources**
+-------------------------
 
-Run benchmarking tests using your chosen ZKP library or framework. This will help identify potential bottlenecks in the computation.
-
-### Optimize Computation and Memory Usage
-
-Based on the benchmarking results, optimize the computation and memory usage of your ZKP application. Consider techniques such as parallelization, vectorization, and memoization to improve performance.
-
-## Conclusion
-
-By following this guide, you have successfully deployed a local GPU cluster for accelerating zero-knowledge proof computations using Docker and nvidia-docker or rocm-docker. Integrate your local GPU cluster with a ZKP library or framework, benchmark and optimize the performance of your application. With these optimizations in place, you can take advantage of the significant computational speedups offered by GPUs to accelerate ZKP-based applications.
-
-Remember to monitor and maintain your local GPU cluster to ensure optimal performance and avoid potential issues. As new developments emerge in ZKP acceleration, stay updated on the latest best practices and technologies to further enhance the efficiency of your infrastructure deployment.
+* Microsoft's zk-SNARKs on GPU: <https://github.com/microsoft/zk-SNARKs-on-GPU>
+* Google's libsnark with GPU support: <https://github.com/scipr-lab/libsnark/tree/master/src/gpu>
+* CUDA/OpenCL documentation and tutorials: <https://docs.nvidia.com/cuda/index.html> / <https://www.khronos.org/opencl/>
 
 ---
 {{< rawhtml >}}
