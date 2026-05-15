@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on </title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 15 May 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Best Automated Data Pipelines for Small Scale Teams</title>
+      <link>/posts/best-automated-data-pipelines-for-small-scale-teams/</link>
+      <pubDate>Fri, 15 May 2026 00:00:00 +0000</pubDate>
+      <guid>/posts/best-automated-data-pipelines-for-small-scale-teams/</guid>
+      <description>&lt;h1 id=&#34;best-automated-data-pipelines-for-small-scale-teams&#34;&gt;Best Automated Data Pipelines for Small Scale Teams&lt;/h1&gt;
+&lt;p&gt;When it comes to small-scale teams, the importance of efficient data pipelines cannot be overstated. With limited resources and a focus on agility, automation is key to streamlining data workflows and ensuring timely insights. In this post, we&amp;rsquo;ll explore the best automated data pipelines for small scale teams.&lt;/p&gt;
+&lt;h2 id=&#34;why-automate-data-pipelines&#34;&gt;Why Automate Data Pipelines?&lt;/h2&gt;
+&lt;p&gt;Before diving into the top choices, let&amp;rsquo;s briefly discuss why automating data pipelines is essential for small-scale teams:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bypassing Enterprise Rate Limits via Local Infrastructure</title>
+      <link>/posts/bypassing-enterprise-rate-limits-via-local-infrastructure/</link>
+      <pubDate>Fri, 15 May 2026 00:00:00 +0000</pubDate>
+      <guid>/posts/bypassing-enterprise-rate-limits-via-local-infrastructure/</guid>
+      <description>&lt;h1 id=&#34;bypassing-enterprise-rate-limits-via-local-infrastructure&#34;&gt;Bypassing Enterprise Rate Limits via Local Infrastructure&lt;/h1&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;As organizations continue to adopt cloud-based services, they often encounter rate limits on API requests and data transmission. These limits are in place to prevent abuse and ensure fair usage of shared resources. However, these constraints can hinder the efficiency of critical business applications and processes.&lt;/p&gt;
+&lt;p&gt;In this article, we will explore the concept of bypassing enterprise rate limits via local infrastructure, discussing the benefits, implementation strategies, and potential challenges associated with this approach.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Open Source LLMs vs Proprietary Cloud APIs Cost Metrics</title>
+      <link>/posts/open-source-llms-vs-proprietary-cloud-apis-cost-metrics/</link>
+      <pubDate>Fri, 15 May 2026 00:00:00 +0000</pubDate>
+      <guid>/posts/open-source-llms-vs-proprietary-cloud-apis-cost-metrics/</guid>
+      <description>&lt;h1 id=&#34;open-source-llms-vs-proprietary-cloud-apis-cost-metrics&#34;&gt;Open Source LLMs vs Proprietary Cloud APIs Cost Metrics&lt;/h1&gt;
+&lt;p&gt;As the adoption of large language models (LLMs) and their applications in various industries grows, understanding the cost metrics for these technologies becomes increasingly important. In this post, we will delve into the differences between open source LLMs and proprietary cloud APIs, examining their cost structures to help system engineers make informed decisions.&lt;/p&gt;
+&lt;h2 id=&#34;open-source-llms&#34;&gt;Open Source LLMs&lt;/h2&gt;
+&lt;p&gt;Open source LLMs like BERT, RoBERTa, and Transformers offer significant flexibility and customizability at a lower upfront cost. These models are developed by research communities and made available under open-source licenses, often with minimal or no licensing fees. However, the cost of running an open source LLM is not entirely free.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
