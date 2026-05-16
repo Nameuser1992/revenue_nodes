@@ -1,1 +1,28 @@
-name: Deploy Hugoecho on:echo   push:echo     branches: [main]echo permissions:echo   contents: readecho   pages: writeecho   id-token: writeecho jobs:echo   deploy:echo     runs-on: ubuntu-latestecho     steps:echo       - name: Checkoutecho         uses: actions/checkout@v4echo       - name: Setup Pagesecho         uses: actions/configure-pages@v4echo       - name: Setup Hugoecho         uses: actions/setup-hugo@v3echo         with:echo           extended: trueecho       - name: Buildecho         run: hugo --minifyecho       - name: Upload artifactecho         uses: actions/upload-pages-artifact@v3echo         with:echo           path: ./publicecho       - name: Deployecho         uses: actions/deploy-pages@v4
+name: Deploy Hugo
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Setup Hugo
+        uses: actions/setup-hugo@v3
+        with:
+          extended: true
+      - name: Build
+        run: hugo --minify
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+      - name: Deploy
+        uses: actions/deploy-pages@v4
