@@ -19,11 +19,11 @@ jobs:
           submodules: recursive
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      - name: Install Hugo
-        run: |
-          wget https://github.com/gohugoio/hugo/releases/download/v0.123.8/hugo_extended_0.123.8_linux-amd64.tar.gz
-          tar -xzf hugo_extended_0.123.8_linux-amd64.tar.gz
-          sudo mv hugo /usr/local/bin/
+      - name: Setup Hugo Extended
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.123.8'
+          extended: true
       - name: Build with Hugo
         run: hugo --minify
       - name: Upload artifact
