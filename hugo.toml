@@ -1,1 +1,6 @@
+baseURL = 'https://Nameuser1992.github.io/revenue_nodes/' 
+languageCode = 'en-us' 
+title = 'Production Nodes' 
 theme = 'PaperMod' 
+[params] 
+    defaultTheme = 'dark'
